@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from random import *
 
-#specify the first objective function
+#specify the objective function
 def f1(x1:float, x2:float)->float:
     return x1**2 + x2**2
 
-#specify the second objective function
+#specify the objective function
 def f2(x1:float, x2:float)->float:
     return 100 * (x1**2 - x2)**2 + (1 - x1)**2
 
