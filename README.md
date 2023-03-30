@@ -3,7 +3,7 @@ python; GA; N decision variables; SBX; polynomial mutation; optimization
 
 ## Overview
 
-​	This program is about how GA works in single objective functions with two decision variables. The great thing about this code is that you can specify any function with N decision variables that you want to optimize.
+​	This program is about how GA works in single objective functions with N decision variables. The great thing about this code is that you can specify any function with N decision variables that you want to optimize.
 
 ​	N is the number of decision variables.
 
