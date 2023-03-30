@@ -19,9 +19,13 @@ The method of mutation used here is highly disruptive polynomial mutation.
 
 Elite strategy is used to select.
 
-### GA_f1.ipynb and GA_f2.ipynb
+### GA_f.ipynb
 
 Parameters you need to concentrate:
+
+Variable_size: the number of decision variable.
+
+X_upper: the boundary of decision variables. its type is numpy array.  The first element of the array is the upper boundary of the first decision variable, and so on.
 
 Crossover_p: the probability of crossover. Usually set it between 0.4 and 0.6.
 
