@@ -1,11 +1,13 @@
 # genetic-algorithm-for-single-objective-functions-GA-
-python; GA; two decision variables; SBX; polynomial mutation; optimization
+python; GA; N decision variables; SBX; polynomial mutation; optimization
 
 ## Overview
 
-​	This program is about how GA works in single objective functions with two decision variables. The great thing about this code is that you can specify any function with two decision variables that you want to optimize.
+​	This program is about how GA works in single objective functions with two decision variables. The great thing about this code is that you can specify any function with N decision variables that you want to optimize.
 
-​	For example, you can find two objective functions here in the file named function.py. Check them by yourself.  
+​	N is the number of decision variables.
+
+​	For example, you can find three objective functions here in the file named function.py. Check them by yourself.  
 
 ## Note
 

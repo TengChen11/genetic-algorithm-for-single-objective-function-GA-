@@ -3,23 +3,27 @@ import matplotlib.pyplot as plt
 from random import *
 
 #specify the objective function
-def f1(x1:float, x2:float)->float:
-    return x1**2 + x2**2
+def f1(x:np.ndarray)->float:
+    return x[0]**2 + x[1]**2
 
 #specify the objective function
-def f2(x1:float, x2:float)->float:
-    return 100 * (x1**2 - x2)**2 + (1 - x1)**2
+def f2(x:np.ndarray)->float:
+    return 100 * (x[0]**2 - x[1])**2 + (1 - x[0])**2
+
+#specify the objective function
+def f3(x:np.ndarray)->float:
+    return 2 * (x[0] - 0.5)**2 + x[1]**2 + x[2]**2 + 1 
 
 # get a fitness_lst from a population
 def get_fitness_lst(population:list, f)->list:
     fitness_lst = []
     for individual in population:
-        fitness = f(individual[0], individual[1])
+        fitness = f(individual)
         fitness_lst.append(fitness)
     return fitness_lst
 
 #specify the SBX(crossover)
-def SBX(p:float, eta:float, x_upper:float, x_lower:float, parent1:np.ndarray, parent2:np.ndarray, is_crossover:bool)->np.ndarray:
+def SBX(p:float, eta:float, x_upper:np.ndarray, x_lower:np.ndarray, parent1:np.ndarray, parent2:np.ndarray, is_crossover:bool)->np.ndarray:
     pt = random()
     is_crossover = False
     if pt < p:
@@ -58,14 +62,13 @@ def poly_mutation(p:float, eta:float, x_upper:np.ndarray, x_lower:np.ndarray, xt
         return xt, is_mutation
     
 #initialize
-def initialize_population(size:int, x_upper:float, x_lower:float)->list:
+def initialize_population(size:int, variable_size:int, x_upper:np.ndarray, x_lower:np.ndarray)->list:
     population = []
     for _ in range(size):
         individual = []
-        x1 = uniform(x_lower, x_upper)
-        x2 = uniform(x_lower, x_upper)
-        individual.append(x1)
-        individual.append(x2)
+        for idx in range(variable_size):
+            x = uniform(x_lower[idx], x_upper[idx])
+            individual.append(x)
         population.append(np.array(individual))
     return population
 
