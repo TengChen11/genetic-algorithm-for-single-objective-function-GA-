@@ -21,7 +21,7 @@ Elite strategy is used to select.
 
 ### GA_f.ipynb
 
-Parameters you need to concentrate:
+Parameters you need to concentrate on:
 
 Variable_size: the number of decision variable.
 
