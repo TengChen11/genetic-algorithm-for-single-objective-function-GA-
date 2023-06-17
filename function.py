@@ -56,8 +56,11 @@ def poly_mutation(p:float, eta:float, x_upper:np.ndarray, x_lower:np.ndarray, xt
             t = (x_upper - xt) / (x_upper - x_lower)
             delta = 1 - np.power(2 * (1-r)+2 * (r-0.5) * np.power(1-t, eta+1), 1/(eta+1))
         offspring = xt + delta * (x_upper - x_lower)
-        is_mutation = True
-        return offspring, is_mutation
+        if (offspring < x_upper).all() and (offspring > x_lower).all():
+            is_mutation = True
+            return offspring, is_mutation
+        else:
+            return xt, is_mutation
     else:
         return xt, is_mutation
     
